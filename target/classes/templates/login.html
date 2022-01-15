@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Sign in</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--        <link href="../static/css/login.css" th:href="@{/css/login.css}" rel="stylesheet" />-->
+<!--        <link rel="stylesheet" type="text/css" media="all" href="../css/login.css" data-th-href="@{/css/login.css}" />-->
+<!--        <link rel="stylesheet" href="../css/login.css" />-->
+
+    </head>
+    <body>
+        <div th:if="${param.error}">
+            Invalid username and password.
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+        <div class="container">
+            <h1>Авторизация</h1>
+            <p>Заполните эту форму, чтобы войти в аккаунт</p>
+            <hr>
+            <form th:action="@{/login}" method="post">
+                <div><label for="name"> <b>User Name :</b>
+                    <input type="text" placeholder="input mail@example.com or name" name="name" id="name" required/>
+                </label></div>
+                    <div><label for="password"> Password: <input type="password" placeholder="..." name="password" id="password" required/>
+                </label></div>
+                <a th:href="@{/chat}"><input type="submit" class="registerbtn" value="Sign In"/></label>
+                <a th:href="@{/chat}">Не перешло?</a>
+            </form>
+        </div>
+        <div class="container signin">
+            <p>Еще не зарегистрированы? <a th:href="@{/register}">Зарегистрироваться</a>.</p>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+

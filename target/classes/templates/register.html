@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title th:text="${register}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--    <link rel="stylesheet" type="text/css" media="all" href="../css/login.css" data-th-href="@{/css/login.css}" />-->
+<!--    <link rel="stylesheet" href="/css/register.css" />-->
+  </head>
+<body>
+<form action="/registers" method="post">
+  <div class="container">
+    <h1>Registration</h1>
+    <p>Заполните эту форму, чтобы завести аккаунт</p>
+    <hr>
+
+    <label for="username"><b>name</b></label>
+    <input type="text" placeholder="Egor" name="username" id="username" th:value="${name}" required>
+
+    <label for="password"><b>Пароль</b></label>
+    <input type="password" placeholder="..." name="password" id="password" th:value="${password}" required>
+
+<!--&lt;!&ndash;    <label for="psw-repeat"><b>Repeat Password</b></label>&ndash;&gt;-->
+<!--
+&lt;!&ndash;    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>&ndash;&gt;
+    <hr>
+-->
+    <a th:href="@{/chat}"><button type="submit" class="registerbtn">Зарегистрироваться</button></a>
+  </div>
+</form>
+
+  <div class="container signin">
+    <p>Уже есть аккаунт? <a th:href="@{/login}">Войти</a>.</p>
+  </div>
+
+
+
+
+</body>
+</html>
